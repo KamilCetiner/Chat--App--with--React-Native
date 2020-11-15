@@ -17,20 +17,21 @@ const Login = (props) => {
     const [password, setPassword] = useState('');
 
     async function login() {
+      console.log(email)
         auth()
           .signInWithEmailAndPassword(email, password)
-          .then(() => props.navigation.navigate('Main'))        
+          .then(() => props.navigation.navigate('Timeline'))        
           
-          .catch((err) => Alert.alert("Google Map", resolveAuthError(err.code)));
+          .catch((err) => Alert.alert("Chat App", resolveAuthError(err.code)));
         try {
           if (email === '' || password === '') {
-            Alert.alert('Google Map', resolveAuthError('auth/null-value'));
+            Alert.alert('Chat App', resolveAuthError('auth/null-value'));
           } else {
             await auth().signInWithEmailAndPassword(email, password);
-            props.navigation.navigate("Main");
+            props.navigation.navigate("Timeline");
           }
         } catch (error) {
-          Alert.alert('Google Map', resolveAuthError(error.code));
+          Alert.alert('Chat App', resolveAuthError(error.code));
         }
       }
 

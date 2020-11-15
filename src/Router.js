@@ -16,7 +16,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
 import {CustomSidebarMenu} from './components';
-import {Login,Main, Sign} from './pages'
+import {Login,Timeline, Sign} from './pages'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
@@ -35,7 +35,7 @@ const NavigationDrawerStructure = (props)=> {
   };
   
   return (
-    <View style={{ flexDirection: 'row' }}>
+    <View style={{ flexDirection: 'row', backgroundColor:'#e3f2fd' }}>
       <TouchableOpacity onPress={()=> toggleDrawer()}>
         {/*Donute Button Image */}
         <Image
@@ -75,8 +75,8 @@ function firstScreenStack({ navigation }) {
         <Stack.Screen
           options={{headerShown: false}}
 
-          name="Main"
-          component={Main}
+          name="Timeline"
+          component={Timeline}
           
         />
       </Stack.Navigator>
@@ -117,8 +117,8 @@ function App(props) {
             
 
         <Drawer.Screen 
-          name="Main"
-          options={{ drawerLabel: 'Main',
+          name="Timeline"
+          options={{ drawerLabel: 'Timeline',
           drawerIcon: config => <Icon  name="home" size={25} style={{marginRight:-10}} color="#5c6bc0" />
         }}
           component={firstScreenStack} Logout

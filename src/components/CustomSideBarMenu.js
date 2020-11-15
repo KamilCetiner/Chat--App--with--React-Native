@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   SafeAreaView,
   View,
@@ -16,6 +17,8 @@ import {
 } from '@react-navigation/drawer';
 
 
+
+
 const CustomSidebarMenu = (props) => {
   
   return (
@@ -23,6 +26,7 @@ const CustomSidebarMenu = (props) => {
       
       {/*Top Large Image */}
       <View style={styles.container} > 
+
       <Image
         source={{uri:'https://i.sozcu.com.tr/wp-content/uploads/2018/07/iecrop/f4-2_1_1_1532941431-400x400.jpg'}}
         style={styles.sideMenuProfileIcon}
