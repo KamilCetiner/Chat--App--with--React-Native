@@ -37,29 +37,29 @@ export const button_outline = StyleSheet.create({
   },
 });
 
-// export const postitem = StyleSheet.create({
-//   container: {
-//     marginVertical: 10,
-//     backgroundColor: 'white',
-//   },
-//   headerContainer: {
-//     padding: 5,
-//     backgroundColor: '#9c27b0',
-//     justifyContent: 'space-between',
-//     flexDirection: 'row'
-//   },
-//   username: {
-//     fontWeight: 'bold',
-//     color: 'white',
-//   },
-//   bodyContainer: {
-//      padding: 5
-//   },
-//   time: {
-//     color: 'white',
-//     fontStyle: 'italic'
-//   }
-// });
+export const postitem = StyleSheet.create({
+  container: {
+    marginVertical: 10,
+    backgroundColor: 'white',
+  },
+  headerContainer: {
+    padding: 5,
+    backgroundColor: '#9c27b0',
+    justifyContent: 'space-between',
+    flexDirection: 'row'
+  },
+  username: {
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  bodyContainer: {
+     padding: 5
+  },
+  time: {
+    color: 'white',
+    fontStyle: 'italic'
+  }
+});
 
 export const post_input = StyleSheet.create({
    container: {

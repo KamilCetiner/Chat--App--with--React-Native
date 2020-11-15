@@ -5,6 +5,7 @@ export * from './Input';
 export * from './Header';
 export * from './PostInput';
 export * from './TopicSelectModel';
+export * from './PostItem';
 
 
 
