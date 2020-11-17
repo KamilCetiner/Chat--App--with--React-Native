@@ -59,6 +59,7 @@ function secondScreenStack({navigation}) {
   return (
     <Stack.Navigator>
       <Stack.Screen 
+        
          options={{headerShown: false}}
         name="Login"
         component={Login}
@@ -114,6 +115,7 @@ function App(props) {
           activeTintColor: 'blue',
           activeBackgroundColor:'#e3f2fd',
           
+          
           itemStyle: { marginVertical: 5, },
         }}
           drawerContent={(props) => <CustomSidebarMenu userShow={props.user} {...props} />}>
@@ -121,7 +123,10 @@ function App(props) {
 
         <Drawer.Screen 
           name="Timeline"
-          options={{ drawerLabel: 'Timeline',
+          
+          options={{ drawerLabel: 'Timeline', headerStyle: {
+            backgroundColor: '#64b5f6'
+          },
           drawerIcon: config => <Icon  name="home" size={25} style={{marginRight:-10}} color="#5c6bc0" />
         }}
           component={firstScreenStack} Logout
@@ -131,7 +136,10 @@ function App(props) {
 
         <Drawer.Screen 
           name="Login"
-          options={{ 
+          
+          options={{ headerStyle: {
+            backgroundColor: '#64b5f6'
+          },
           drawerIcon: config => <Icon  name="login" size={25} style={{marginRight:-10}} color="#5c6bc0" />
         
         }}
@@ -139,7 +147,9 @@ function App(props) {
        
         <Drawer.Screen
           name="Sign"
-          options={{ drawerLabel: 'Sign',
+          options={{ drawerLabel: 'Sign',headerStyle: {
+            backgroundColor: '#64b5f6'
+          },
           drawerIcon: config => <Icon  name="account" size={25} style={{marginRight:-10}} color="#5c6bc0" />
         }}
           component={thirdScreenStack} />
@@ -147,7 +157,7 @@ function App(props) {
 
         <Drawer.Screen
           name="Logout"
-          options={{ drawerLabel: 'Logout',
+          options={{ drawerLabel: 'Logout', 
           drawerIcon: config => <Icon  name="account-off" size={25} style={{marginRight:-10}} color="#5c6bc0" />
         }}
           component={thirdScreenStack} />

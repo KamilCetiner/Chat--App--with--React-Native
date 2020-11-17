@@ -1,4 +1,5 @@
 import {StyleSheet, Dimensions} from 'react-native';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 export const input = StyleSheet.create({
   container: {
@@ -37,28 +38,55 @@ export const button_outline = StyleSheet.create({
   },
 });
 
-export const postitem = StyleSheet.create({
-  container: {
-    marginVertical: 10,
-    backgroundColor: 'white',
-  },
-  headerContainer: {
-    padding: 5,
-    backgroundColor: '#9c27b0',
-    justifyContent: 'space-between',
+export const post = StyleSheet.create({
+  item: {
+    marginVertical: moderateScale(7, 2),
     flexDirection: 'row'
-  },
-  username: {
-    fontWeight: 'bold',
-    color: 'white',
-  },
-  bodyContainer: {
-     padding: 5
-  },
-  time: {
-    color: 'white',
-    fontStyle: 'italic'
-  }
+ },
+ itemIn: {
+     marginLeft: 20
+ },
+ itemOut: {
+    alignSelf: 'flex-end',
+    marginRight: 20
+ },
+ balloon: {
+    maxWidth: moderateScale(250, 2),
+    paddingHorizontal: moderateScale(100, 2),
+    paddingTop: moderateScale(35, 2),
+    paddingBottom: moderateScale(10, 2),
+    paddingRight: moderateScale(40, 2),
+    borderRadius: 20,
+ },
+ arrowContainer: {
+     position: 'absolute',
+     top: 0,
+     left: 0,
+     right: 0,
+     bottom: 0,
+     zIndex: -1,
+     flex: 1,
+
+ },
+ arrowLeftContainer: {
+     justifyContent: 'flex-end',
+     alignItems: 'flex-start'
+ },
+
+ arrowRightContainer: {
+     justifyContent: 'center',
+     alignItems: 'flex-end',
+     paddingLeft:10
+
+ },
+
+ arrowLeft: {
+     left: moderateScale(-6, 0.5),
+ },
+
+ arrowRight: {
+     right:moderateScale(-6, 0.5),
+ }
 });
 
 export const post_input = StyleSheet.create({
