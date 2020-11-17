@@ -203,6 +203,9 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-database'
 
+    implementation project(':react-native-svg')      // Burasi silinecek eger svg calismazsa ****
+
+   
 
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {

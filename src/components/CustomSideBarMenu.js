@@ -43,7 +43,7 @@ const CustomSidebarMenu = (props) => {
           fontSize: 16,
           textAlign: 'center',
           color: 'grey'
-        }}>
+        }}> {props.userShow}
        
       </Text>
     </SafeAreaView>

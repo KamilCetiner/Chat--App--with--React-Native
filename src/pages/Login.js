@@ -17,7 +17,6 @@ const Login = (props) => {
     const [password, setPassword] = useState('');
 
     async function login() {
-      console.log(email)
         auth()
           .signInWithEmailAndPassword(email, password)
           .then(() => props.navigation.navigate('Timeline'))        

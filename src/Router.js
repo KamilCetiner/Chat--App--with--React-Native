@@ -18,6 +18,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import {CustomSidebarMenu} from './components';
 import {Login,Timeline, Sign} from './pages'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import auth from '@react-native-firebase/auth';
+
 
 
 
@@ -28,7 +30,8 @@ const Drawer = createDrawerNavigator();
 
 
 const NavigationDrawerStructure = (props)=> {
-  //Structure for the navigatin Drawer
+
+  //Structure for the navigatin Drawer 
   const toggleDrawer = () => {
     //Props to open/close the drawer
     props.navigationProps.toggleDrawer();
@@ -100,7 +103,7 @@ function thirdScreenStack({navigation}) {
   );
 }
 
-
+  
 
 function App(props) {
   return (
@@ -113,7 +116,7 @@ function App(props) {
           
           itemStyle: { marginVertical: 5, },
         }}
-          drawerContent={(props) => <CustomSidebarMenu {...props} />}>
+          drawerContent={(props) => <CustomSidebarMenu userShow={props.user} {...props} />}>
             
 
         <Drawer.Screen 

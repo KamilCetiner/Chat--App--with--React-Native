@@ -21,7 +21,7 @@ const PostItem = (props) => {
       <View style={postitem.bodyContainer}>
         <Text>{props.post.postText}</Text>
       </View>
-    </View>
+    </View> 
   );
 };
 

@@ -8,7 +8,6 @@ import {post_input} from './styles';
 const PostInput = (props) => {
 
     const [postText, setPostText] = React.useState('');
-    console.log(postText)
     return(
         <View>
             <View>

@@ -11,7 +11,7 @@ const TopicSelectModal = (props) => {
 
     <Modal
     isVisible={props.visibility}
-    style={topicModal.modal}
+    style={topicModal.modal}  
     onBackdropPress={props.onClose}
     
     >
