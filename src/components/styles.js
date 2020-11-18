@@ -53,7 +53,7 @@ export const post = StyleSheet.create({
  balloon: {
     maxWidth: moderateScale(250, 2),
     paddingHorizontal: moderateScale(100, 2),
-    paddingTop: moderateScale(35, 2),
+    paddingTop: moderateScale(55, 2),
     paddingBottom: moderateScale(10, 2),
     paddingRight: moderateScale(40, 2),
     borderRadius: 20,

@@ -10,7 +10,7 @@ import { PostItem, PostInput,Header, TopicSelectModal} from '../components';
 
 const user = auth().currentUser;
 
-const Timeline = () => {
+const Timeline = (props) => {
 
     const [postList, setPostList] = useState([]);
 
@@ -35,12 +35,19 @@ const Timeline = () => {
             })
                 
             setPostList(formattedData);
-           
+            const moveData = formattedData.map(x => console.log(x.time) )
            
             
         });
          
     };
+
+    const onRemove =(t) => {
+        const newMessages = [...postList]
+
+        let 
+        
+    }
 
 
     // const formattedData = Object.keys(data).map(key =>({
@@ -51,7 +58,9 @@ const Timeline = () => {
     //     setPostList(formattedData);
     // }))
 
-    const renderPost = ({item}) => <PostItem post={item} />
+    const renderPost = ({item}) => <PostItem onCategorySelect={(value) => onRemove(value)}
+        
+    post={item} />
 
     const sendingPost = (value) => {
         const postObject = {
