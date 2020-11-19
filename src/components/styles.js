@@ -141,10 +141,16 @@ export const topicModal = StyleSheet.create({
   },
   topicItemContainer: {
      padding: 10,
+     backgroundColor:'#cfd8dc',
+     marginBottom:2,
+     marginLeft: 7,
+     marginRight: 7,
+     borderRadius: 10
+     
   },  
   topicItemText: {
      fontSize: 20,
      fontWeight: 'bold',
-     color: '#78909c'
+     color: 'black'
   },  
 });

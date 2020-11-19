@@ -47,7 +47,9 @@ const Timeline = (props) => {
         .on('value', (snapshot) => {
 
             const data = snapshot.val()
-            const formattedData = Object.keys(data).map(key =>({ ...data[key]  }))
+            let formattedData = []
+
+            data == null ? formattedData= [] : formattedData = Object.keys(data).map(key =>({ ...data[key]  }))
             
 
             formattedData.sort((a, b) => {

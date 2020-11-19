@@ -22,13 +22,13 @@ const Header = (props) => {
         } */}
         
         <Icon
-          name="hexagon-multiple"
-          size={30}
+          name="chat-plus-outline"
+          size={35}
           color="#5c6bc0"
           onPress={props.onTopicModalSelect}
           style={{
-            marginRight: 10,
-            marginLeft: 200
+            marginRight: 20,
+            
             
           }}
         />
