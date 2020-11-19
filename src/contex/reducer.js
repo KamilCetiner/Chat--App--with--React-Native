@@ -5,7 +5,7 @@ export function reducer(state, action) {
             return {...state}
 
         case 'ADD_USER':
-            state.userName = action.paylod.newUserName
+            state.userName = action.payload.newUserName
             return {...state}
 
         default :

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import  moment from 'moment'
-import {View, Text, FlatList} from 'react-native';
+import {View, Text, FlatList, ScrollView} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import database  from '@react-native-firebase/database';
 import {Provider} from 'react-redux';
@@ -14,17 +14,18 @@ import {timelinePage} from './style';
 
 import { PostItem, PostInput,Header, TopicSelectModal} from '../components';
 
-const dispatch = useDispatch();
 
 const Timeline = (props) => {
+    const dispatch = useDispatch();
     
     const user = auth().currentUser;
+    console.log(user.email)
 
     {
-        user ? dispatch({
+        user.email ? dispatch({
             type: "ADD_USER",
         payload: {
-        newUserName : user.email
+            newUserName : user.email
       }
         }) :null
     }
@@ -120,7 +121,8 @@ const Timeline = (props) => {
             onTopicModalSelect={() => setTopicModalFLag(true)}
              
             />
-
+                        
+            <ScrollView style={{flex:1}}>
             <FlatList
             
             keyExtractor={(_, index) => index.toString()}
@@ -128,10 +130,15 @@ const Timeline = (props) => {
             renderItem={renderPost} 
             /> 
 
+            </ScrollView>
+
+            
+
             <PostInput 
             onSendPost={sendingPost}
             
             />
+
 
             <TopicSelectModal 
             visibility={topicModalFlag}

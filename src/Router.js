@@ -13,10 +13,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import {createStore} from 'redux'
-import { useDispatch } from 'react-redux'
 
 import {reducer, initialState} from './contex';
 const store = createStore(reducer, initialState)
+
 import {Provider} from 'react-redux';
 
 

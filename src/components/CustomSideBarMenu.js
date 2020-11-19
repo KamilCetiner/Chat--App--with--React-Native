@@ -26,17 +26,20 @@ const CustomSidebarMenu = (props) => {
 
   
   return (
-    <SafeAreaView style={{flex: 1}}>
+    
+    <SafeAreaView style={{flex: 0.7}}>
       
       {/*Top Large Image */}
       <View style={styles.container} > 
 
+      <View>
       <Image
         source={{uri:'https://i.sozcu.com.tr/wp-content/uploads/2018/07/iecrop/f4-2_1_1_1532941431-400x400.jpg'}}
         style={styles.sideMenuProfileIcon}
       /> 
-      <Text style={{marginLeft:5, color:'black', fontWeight:'bold', marginBottom: 20}}></Text>
+      <Text style={{marginLeft:15, color:'black', fontWeight:'bold',color:'white'}}>{drawer_user}</Text>
 
+      </View>
       </View>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
@@ -57,13 +60,14 @@ const CustomSidebarMenu = (props) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex:1,
     backgroundColor: '#64b5f6',
     height: Dimensions.get('window').height / 4.3,
   },
   sideMenuProfileIcon: {
     resizeMode: 'center',
-    width: 75,
-    height: 80,
+    width: 85,
+    height: 90,
     borderRadius: 100 / 1.5,
     marginLeft: 15,
     marginBottom: 50,
