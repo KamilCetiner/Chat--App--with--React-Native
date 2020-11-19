@@ -12,6 +12,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+import {createStore} from 'redux'
+import { useDispatch } from 'react-redux'
+
+import {reducer, initialState} from './contex';
+const store = createStore(reducer, initialState)
+import {Provider} from 'react-redux';
+
 
 
 
@@ -38,6 +45,7 @@ const NavigationDrawerStructure = (props)=> {
   };
   
   return (
+
     <View style={{ flexDirection: 'row', backgroundColor:'#e3f2fd' }}>
       <TouchableOpacity onPress={()=> toggleDrawer()}>
         {/*Donute Button Image */}
@@ -108,6 +116,7 @@ function thirdScreenStack({navigation}) {
 
 function App(props) {
   return (
+    <Provider store={store}>
 
     <NavigationContainer  >
       <Drawer.Navigator initialRouteName='Login'
@@ -164,6 +173,8 @@ function App(props) {
        
       </Drawer.Navigator>
     </NavigationContainer>
+        </Provider>
+
 
   );
 }

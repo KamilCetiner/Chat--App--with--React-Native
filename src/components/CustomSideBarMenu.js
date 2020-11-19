@@ -1,4 +1,6 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
+
 
 import {
   SafeAreaView,
@@ -20,6 +22,8 @@ import {
 
 
 const CustomSidebarMenu = (props) => {
+  const drawer_user = useSelector(y =>y.userName)
+
   
   return (
     <SafeAreaView style={{flex: 1}}>

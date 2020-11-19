@@ -5,6 +5,7 @@ import auth from '@react-native-firebase/auth';
 import database  from '@react-native-firebase/database';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux'
+import { useDispatch } from 'react-redux'
 
 import {reducer, initialState} from '../contex';
 const store = createStore(reducer, initialState)
@@ -13,15 +14,28 @@ import {timelinePage} from './style';
 
 import { PostItem, PostInput,Header, TopicSelectModal} from '../components';
 
-const user = auth().currentUser;
+const dispatch = useDispatch();
 
 const Timeline = (props) => {
+    
+    const user = auth().currentUser;
+
+    {
+        user ? dispatch({
+            type: "ADD_USER",
+        payload: {
+        newUserName : user.email
+      }
+        }) :null
+    }
+    
 
     const [postList, setPostList] = useState([]);
     const [indexList, setIndexList] = useState([]);
 
     const[topicModalFlag, setTopicModalFLag] = useState(true);
     const [selectedTopic, setSelectedTopic] = useState(null);
+
 
     const selectingTopic = (value) => {
         database().ref(`/${selectedTopic}/`).off('value');
