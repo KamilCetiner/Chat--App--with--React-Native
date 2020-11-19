@@ -13,9 +13,10 @@ const PostInput = (props) => {
       inputRef.current.clear();
     };
     return(
-        <View>
-            <View>
+        <View style={post_input.container} >
+            <View style={post_input.inputContainer} >
                 <TextInput
+                underlineColorAndroid='#5c6bc0'
                 ref={inputRef}
                 placeholder='Enter your message...'
                 onChangeText={(value) =>setPostText(value) }
@@ -27,7 +28,7 @@ const PostInput = (props) => {
 
             style={{justifyContent: 'center'}}
             onPress={() => {props.onSendPost(postText); onClearInput()}}>
-            <Icon name='telegram' size={30} color='#69007f' />
+            <Icon name='telegram' size={30} color='#5c6bc0' />
 
             </TouchableOpacity>
 

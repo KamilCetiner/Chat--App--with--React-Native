@@ -50,9 +50,9 @@ const PostItem = (props) => {
         >
         
         {/* <Text style={{paddingRight: 10, fontSize:12, color: 'black'}}>{props.post.userMail.split('@')[0]}</Text> */}
-        <Text  style={{paddingRight: 40,  color: 'black', fontSize:15, fontWeight: 'bold'}} >{props.post.postText}</Text>
+        <Text  style={{paddingRight: 20,  color: 'black', fontSize:15, fontWeight: 'bold'}} >{props.post.postText}</Text>
 
-        <Text style={{paddingTop: 20, paddingRight:10, color: 'black', fontSize: 10,fontWeight: 'bold' }}>
+        <Text style={{paddingTop: 15, paddingRight:10, color: 'black', fontSize: 10,fontWeight: 'bold' }}>
           {moment
             .duration( 
               moment(props.post.time).diff(moment(new Date()), 'seconds'),

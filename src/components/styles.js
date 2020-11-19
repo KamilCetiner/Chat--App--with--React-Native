@@ -52,8 +52,8 @@ export const post = StyleSheet.create({
  },
  balloon: {
     maxWidth: moderateScale(250, 2),
-    paddingHorizontal: moderateScale(100, 2),
-    paddingTop: moderateScale(55, 2),
+    paddingHorizontal: moderateScale(80, 2),
+    paddingTop: moderateScale(50, 2),
     paddingBottom: moderateScale(10, 2),
     paddingRight: moderateScale(40, 2),
     borderRadius: 20,
@@ -76,7 +76,7 @@ export const post = StyleSheet.create({
  arrowRightContainer: {
      justifyContent: 'center',
      alignItems: 'flex-end',
-     paddingLeft:10
+    
 
  },
 
@@ -91,9 +91,9 @@ export const post = StyleSheet.create({
 
 export const post_input = StyleSheet.create({
    container: {
-      width: Dimensions.get('window').width * 0.9,
+      width: Dimensions.get('window').width * 1,
       alignSelf: 'center',
-      bottom: 10,
+      bottom: 5,
       position: 'absolute',
       backgroundColor: '#e0e0e0',
       borderRadius: 5,
@@ -104,9 +104,6 @@ export const post_input = StyleSheet.create({
    },  
    inputContainer: {
       flex: 1,
-   },
-   button: {
-
    }
 });
 
@@ -116,15 +113,16 @@ export const header = StyleSheet.create({
       padding: 5,
       alignItems: 'center',
       borderBottomWidth: 1,
-      borderColor: '#90a4ae'
+      borderColor: '#e1f5fe'
    },  
    textContainer: {
-      flex: 1
+      flex: 1,
+      
    },  
    text: {
-      fontSize: 30,
+      fontSize: 25,
       fontWeight: 'bold',
-      color: '#78909c'
+      color: '#1a237e'
    },  
 });
 

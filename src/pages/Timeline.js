@@ -32,7 +32,6 @@ const Timeline = (props) => {
     
 
     const [postList, setPostList] = useState([]);
-    const [indexList, setIndexList] = useState([]);
 
     const[topicModalFlag, setTopicModalFLag] = useState(true);
     const [selectedTopic, setSelectedTopic] = useState(null);
@@ -69,19 +68,14 @@ const Timeline = (props) => {
         
         const messagesIndex = postList.findIndex((msg) => {
             const selectedTime = msg.time 
-            console.log(selectedTime)
             return selectedTime === moves ? postList.indexOf(selectedTime) : null
             
         })
 
-        setIndexList(messagesIndex)
-        newMessages.splice(messagesIndex, 1)
-        setPostList(newMessages)
-
-
-
         
-    }
+        newMessages.splice(messagesIndex, 1)
+        setPostList(newMessages) 
+}
 
     // const onRemoveAllItem = () => {
         
@@ -96,7 +90,7 @@ const Timeline = (props) => {
     //     setPostList(formattedData);
     // }))
 
-    const renderPost = ({item}) => <PostItem onCategorySelect={(value) => onRemove(value)}
+    const renderPost = ({item}) => <PostItem post={item} onCategorySelect={(value) => onRemove(value)}
         
     post={item} />
 

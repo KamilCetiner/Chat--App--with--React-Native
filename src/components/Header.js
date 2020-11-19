@@ -16,18 +16,20 @@ const Header = (props) => {
       </View>
       <View style={{justifyContent: 'center', flexDirection: 'row'}}>
 
-      {
-          homeIcon ? <Icon onPress={props.onRemoveAll} style={{marginRight:40}} name='playlist-remove' size={50} color="#69007f" 
+      {/* { This aim was to remove all the item 
+          homeIcon ? <Icon onPress={props.onRemoveAll} style={{marginRight:40}} name='playlist-remove' size={50} color="#5c6bc0" 
            /> :null
-        }
+        } */}
         
         <Icon
           name="hexagon-multiple"
           size={30}
-          color="#69007f"
+          color="#5c6bc0"
           onPress={props.onTopicModalSelect}
           style={{
-            marginRight: 10
+            marginRight: 10,
+            marginLeft: 200
+            
           }}
         />
    
