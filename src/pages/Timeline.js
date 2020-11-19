@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 import  moment from 'moment'
 import {View, Text, FlatList} from 'react-native';
-import auth from '@react-native-firebase/auth'
-import database  from '@react-native-firebase/database'
+import auth from '@react-native-firebase/auth';
+import database  from '@react-native-firebase/database';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux'
+
+import {reducer, initialState} from '../contex';
+const store = createStore(reducer, initialState)
 
 import {timelinePage} from './style';
 
@@ -13,6 +18,7 @@ const user = auth().currentUser;
 const Timeline = (props) => {
 
     const [postList, setPostList] = useState([]);
+    const [indexList, setIndexList] = useState([]);
 
     const[topicModalFlag, setTopicModalFLag] = useState(true);
     const [selectedTopic, setSelectedTopic] = useState(null);
@@ -23,7 +29,7 @@ const Timeline = (props) => {
         setTopicModalFLag(false) 
 
         database()
-        .ref(`${value}`)
+        .ref(`${value}`) 
         .on('value', (snapshot) => {
 
             const data = snapshot.val()
@@ -35,19 +41,36 @@ const Timeline = (props) => {
             })
                 
             setPostList(formattedData);
-            const moveData = formattedData.map(x => console.log(x.time) )
-           
             
-        });
+            
+        }); 
          
     };
 
-    const onRemove =(t) => {
+    const onRemove =(moves) => {
+        console.log(moves)
+        
         const newMessages = [...postList]
+        
+        const messagesIndex = postList.findIndex((msg) => {
+            const selectedTime = msg.time 
+            console.log(selectedTime)
+            return selectedTime === moves ? postList.indexOf(selectedTime) : null
+            
+        })
 
-        let 
+        setIndexList(messagesIndex)
+        newMessages.splice(messagesIndex, 1)
+        setPostList(newMessages)
+
+
+
         
     }
+
+    // const onRemoveAllItem = () => {
+        
+    // }
 
 
     // const formattedData = Object.keys(data).map(key =>({
@@ -72,13 +95,16 @@ const Timeline = (props) => {
     }
 
     return(
+
+    <Provider store={store}>
     <View style={timelinePage.container}>
         <View style={timelinePage.container}>
 
             <Header
+
             title={selectedTopic}
             onTopicModalSelect={() => setTopicModalFLag(true)}
- 
+             
             />
 
             <FlatList
@@ -86,7 +112,7 @@ const Timeline = (props) => {
             keyExtractor={(_, index) => index.toString()}
             data={postList} 
             renderItem={renderPost} 
-            />
+            /> 
 
             <PostInput 
             onSendPost={sendingPost}
@@ -100,8 +126,9 @@ const Timeline = (props) => {
             />
         </View>
 
-
+        
     </View>
+    </Provider>
     )
 }
 

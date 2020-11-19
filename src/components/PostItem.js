@@ -2,6 +2,8 @@ import moment from 'moment';
 import React from 'react';
 import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
 import {post} from './styles';
+import { useDispatch } from 'react-redux';
+
 
 import Svg, {
   Path,
@@ -13,6 +15,8 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 const PostItem = (props) => { 
   const [ isPress, setIsPress] = React.useState(false)
+  const dispatch = useDispatch();
+
 
   const touchProps = {
 
@@ -26,9 +30,14 @@ const PostItem = (props) => {
 
     <TouchableOpacity {...touchProps}
     
-    onLongPress={() => setIsPress(true)}
+    onLongPress={() => {setIsPress(true); props.onCategorySelect(props.post.time); dispatch({
+      type: "ADD_ICON",
+      payload: {
+        newIconName : "playlist-remove"
+      }
+  })}  }
     onPress={() => setIsPress(false)}
-    onPressIn={() => props.onCategorySelect(props.post.postText)}
+
     
     >
     <View style={[post.item, post.itemOut]}>
