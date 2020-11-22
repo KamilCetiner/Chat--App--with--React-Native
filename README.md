@@ -16,7 +16,6 @@ To make chat bubbles we used Svg and Size-Matters packages
 ## This is a short video introduction about this app.
 
 ![screenshot](overview/Chat_Video.gif)
-![screenshot](overview/Chat.jpg)
 
 ### At the end of the project, following topics are to be covered;
 
