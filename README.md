@@ -17,6 +17,7 @@ To make chat bubbles we used Svg and Size-Matters packages
 
 ![screenshot](overview/Chat_Video.gif)
 
+
 ### At the end of the project, following topics are to be covered;
 
 - HTML
