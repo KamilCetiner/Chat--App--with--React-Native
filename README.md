@@ -9,7 +9,9 @@ With this project used GOOGLE FIRE BASE to control account issues.
 And also used GOOGLE FIREBASE (RealTime Database)  for data storage and other operations.
 
 With Realtimedatabase we setup an active listener to react to any changes to the node and its children.
-To make chat bubbles we used Svg and Size-Matters packages
+To make chat bubbles we used Svg and Size-Matters packages.
+
+You can see it below the Chat App Gif
 
 
 
